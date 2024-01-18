@@ -6,15 +6,20 @@
   
   body {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     font-size: 20px;
     font-family: "Montserrat", sans-serif;
   }
 
   .page__wrapper{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .reset__navlink{
+    text-decoration: none;
+    color: #fff;
   }

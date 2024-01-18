@@ -1,0 +1,63 @@
+.screen__card {
+  width: 350px;
+  height: 350px;
+  background-color: var(--s1-primary-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+
+.screen__card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.screen__card__strip {
+  position: absolute;
+  right: -50px;
+  top: 25px;
+  rotate: 45deg;
+  background-color: red;
+  padding: 10px 50px;
+  font-size: 1.5rem;
+}
+
+.screen__card p {
+  font-size: 1.5rem;
+}
+
+.screen__card p::after {
+  content: "";
+  width: 150px;
+  height: 5px;
+  background-color: red;
+  position: absolute;
+  display: block;
+  margin-top: 10px;
+}
+
+/* For Mobile Devices */
+@media screen and (max-width: 756px){
+  .screen__card {
+    width: 300px;
+    height: 300px;
+    padding-left: 20px;
+  }
+
+  .screen__card__strip {
+    right: -45px;
+    font-size: 1.2rem;
+  }
+
+  .screen__card p {
+    font-size: 1.3rem;
+  }
+
+  .screen__card p::after {
+    width: 120px;
+  }
+}
