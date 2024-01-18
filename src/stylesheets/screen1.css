@@ -1,6 +1,107 @@
 :root {
   --s1-primary-color: #171f38;
+  --s1-primary-color-light: #242e4ccc;
   --s1-secondary-color: #f775c1;
   --s1-accent-color-light: #ebebf2;
   --s1-accent-color-dark: #97a5ce;
+}
+
+
+.screen1__container{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--s1-primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--s1-accent-color-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.blob1{
+  position: absolute;
+  left: 40px;
+  bottom: 260px;
+  width: 100px;
+  height: 100px;
+}
+
+
+.blob2{
+  position: absolute;
+  left: 120px;
+  bottom: 40px;
+  width: 200px;
+  height: 200px;
+}
+
+.blob3{
+  position: absolute;
+  right: -80px;
+  bottom: 0;
+  width: 350px;
+  height: 350px;
+}
+
+.blob1 img, .blob2 img, .blob3 img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.form__container{
+  background-color: var(--s1-primary-color-light);
+  width: 90vw;
+  height: 85vh;
+  z-index: 1;
+  border-radius: 15px;
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__sub__heading{
+  font-size: .8rem;
+}
+
+.form__heading{
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 756px) {
+  
+  .form__container{
+    justify-content: flex-start;
+    overflow-y: scroll;
+    padding-block: 50px;
+  }
+
+  .blob1{
+    position: absolute;
+    left: 10px;
+    top: 400px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  
+  .blob2{
+    position: absolute;
+    left: 200px;
+    top: 30px;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .blob3{
+    position: absolute;
+    right: -50px;
+    bottom: 0;
+    width: 200px;
+    height: 200px;
+  }
 }
