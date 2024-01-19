@@ -26,12 +26,15 @@
 }
 .form label{
     margin-bottom: 5px;
+    margin-top: 5px;
     color: var(--s1-accent-color-dark);
 }
 
 .form small{
     margin-top: 5px;
+    /* margin-bottom: 5px; */
     color: red;
+    float: right;
     /* visibility: hidden; */
 }
 
@@ -92,12 +95,19 @@ input[type="file"] {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    /* background-color: #fff; */
 }
 
 #fileError{
     font-size: .8rem;
+    color: red;
+    float: right;
+}
+
+#fileName{
+    font-size: .8rem;
     color: var(--s1-accent-color-dark);
+    float: left;
+    margin-left: 2px
 }
 
 @media screen and (max-width: 756px) {

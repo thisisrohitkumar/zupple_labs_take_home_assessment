@@ -4,8 +4,14 @@ const Form = () => {
   const initialValues = {
     authKey: "",
     title: "",
-    desc : "",
-    tags : ""
+    desc: "",
+    tags: "",
+    date: "",
+    software: "Sketch",
+    image: null,
+    file: null,
+    imageName: "No file uploaded",
+    fileName: "No file uploaded",
   };
 
   const [formValues, setFormValues] = useState(initialValues);
@@ -13,15 +19,27 @@ const Form = () => {
   const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setFormValues({...formValues, [name] : value})
-  }
+    const { name, type, value } = e.target;
+    if (type === "file") {
+      const file = e.target.files[0];
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        [name]: file,
+        [`${name}Name`]: file.name,
+      }));
+    } else {
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        [name]: value,
+      }));
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submit is clicked");
-    setFormErrors(validateForm(formValues))
-    setIsSubmit(true)
+    setFormErrors(validateForm(formValues));
+    setIsSubmit(true);
   };
 
   useEffect(() => {
@@ -37,6 +55,8 @@ const Form = () => {
 
     if (!values.authKey) {
       errors.authKey = "Invalid Auth Key!";
+    } else if (values.authKey.length < 10) {
+      errors.authKey = "Auth Key Must Be 10 Char Long!";
     }
     if (!values.title) {
       errors.title = "Title is Required!";
@@ -47,9 +67,21 @@ const Form = () => {
     if (!values.tags) {
       errors.tags = "Tags must be comma seperated!";
     }
+    if (!values.date) {
+      errors.date = "Invalid Date Format";
+    }
+    if (!values.software) {
+      errors.software = "Software is Required!";
+    }
+    if (!values.image) {
+      errors.image = "Image Is Required!";
+    }
+    if (!values.file) {
+      errors.file = "File Is Required!";
+    }
 
-    return errors
-  }
+    return errors;
+  };
 
   return (
     <>
@@ -57,6 +89,8 @@ const Form = () => {
         <div className="form__grid">
           <div className="form__grid__row1">
             <div className="form__grid__column1">
+              
+              {/* Authentication Key */}
               <div className="form__field">
                 <label htmlFor="authKey">Authentication Key</label>
                 <input
@@ -66,10 +100,14 @@ const Form = () => {
                   placeholder="Authentication Key"
                   value={formValues.authKey}
                   onChange={handleChange}
+                  aria-describedby="authError"
                 />
-                <small id="authError">{formErrors.authKey}</small>
+                <small id="authError" className="error-message">
+                  {formErrors.authKey}
+                </small>
               </div>
 
+              {/* Title */}
               <div className="form__field">
                 <label htmlFor="title">Title</label>
                 <input
@@ -79,24 +117,33 @@ const Form = () => {
                   placeholder="Title"
                   value={formValues.title}
                   onChange={handleChange}
+                  aria-describedby="titleError"
                 />
-                <small id="titleError">{formErrors.title}</small>
+                <small id="titleError" className="error-message">
+                  {formErrors.title}
+                </small>
               </div>
 
+              {/* Description */}
               <div className="form__field">
                 <label htmlFor="desc">Description</label>
                 <textarea
                   name="desc"
-                  id=""
+                  id="desc"
                   rows="8"
                   placeholder="Description"
                   value={formValues.desc}
                   onChange={handleChange}
+                  aria-describedby="descError"
                 ></textarea>
-                <small id="descError">{formErrors.desc}</small>
+                <small id="descError" className="error-message">
+                  {formErrors.desc}
+                </small>
               </div>
             </div>
             <div className="form__grid__column2">
+
+              {/* Tags */}
               <div className="form__field">
                 <label htmlFor="tags">Tags (comma separated)</label>
                 <input
@@ -106,10 +153,14 @@ const Form = () => {
                   placeholder="Tags (comma separated)"
                   value={formValues.tags}
                   onChange={handleChange}
+                  aria-describedby="tagsError"
                 />
-                <small id="tagsError">{formErrors.tags}</small>
+                <small id="tagsError" className="error-message">
+                  {formErrors.tags}
+                </small>
               </div>
 
+              {/* Date */}
               <div className="form__field">
                 <label htmlFor="date">Date</label>
                 <input
@@ -117,40 +168,81 @@ const Form = () => {
                   name="date"
                   id="date"
                   placeholder="DD/MM/YY"
+                  value={formValues.date}
+                  onChange={handleChange}
+                  aria-describedby="dateError"
                 />
-                <small id="dateError">Date Is Required!</small>
+                <small id="dateError" className="error-message">
+                  {formErrors.date}
+                </small>
               </div>
 
+              {/* Software */}
               <div className="form__field">
                 <label htmlFor="software">Software</label>
-                <select name="software" id="software">
+                <select
+                  name="software"
+                  id="software"
+                  onChange={handleChange}
+                  value={formValues.software}
+                  aria-describedby="softwareError"
+                >
                   <option value="sketch">Sketch</option>
                   <option value="figma">Figma</option>
                   <option value="illustrator">Illustrator</option>
                 </select>
-                <small id="softwareError">Please Select Software!</small>
+                <small id="softwareError" className="error-message">
+                  {formErrors.software}
+                </small>
               </div>
+
+              {/* Image and File */}
               <div className="form__field custom-file">
                 <span>
-                  <label>Thumbnail Image</label>
-                  <label htmlFor="image" className="custom-file-upload">
+                  <label htmlFor="image">Thumbnail Image</label>
+                  <label className="custom-file-upload">
                     Upload File
+                    <input
+                      type="file"
+                      name="image"
+                      id="image"
+                      onChange={handleChange}
+                      aria-describedby="fileError"
+                    />
                   </label>
-                  <input type="file" name="image" id="image" />
-                  <p id="fileError">No file uploaded</p>
+                  <p id="fileName" className="error-message">
+                    {formValues.imageName}
+                  </p>
+                  <p id="fileError" className="error-message">
+                    {formErrors.image}
+                  </p>
                 </span>
+
                 <span>
-                  <label>Source File</label>
-                  <label htmlFor="file" className="custom-file-upload">
+                  <label htmlFor="file">Source File</label>
+                  <label className="custom-file-upload">
                     Upload File
+                    <input
+                      type="file"
+                      name="file"
+                      id="file"
+                      onChange={handleChange}
+                      aria-describedby="fileError"
+                    />
                   </label>
-                  <input type="file" name="file" id="file" />
-                  <p id="fileError">No file uploaded</p>
+                  <p id="fileName" className="error-message">
+                    {formValues.fileName}
+                  </p>
+                  <p id="fileError" className="error-message">
+                    {formErrors.file}
+                  </p>
                 </span>
               </div>
             </div>
           </div>
           <div className="form__grid__row2">
+
+            {/* Submit Button */}
             <div className="form__submit">
               <button type="submit">Submit</button>
             </div>
