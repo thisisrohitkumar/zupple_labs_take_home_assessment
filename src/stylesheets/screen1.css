@@ -17,6 +17,7 @@
   color: var(--s1-accent-color-light);
   position: relative;
   overflow: hidden;
+  font-family: "Montserrat", sans-serif;
 }
 
 .blob1{
