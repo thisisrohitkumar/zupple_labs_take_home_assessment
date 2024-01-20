@@ -1,8 +1,62 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Front-end Engineering Intern Take-Home Assessment | Zupple Labs
 
-Currently, two official plugins are available:
+Submitted By : Rohit Kumar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Tech Stack
+
+**Client:** HTML, CSS, JavaScript, React
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/thisisrohitkumar/zupple_labs_take_home_assessment
+```
+
+Go to the project directory
+
+```bash
+  cd zupple_labs_take_home_assessment
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Screenshots
+Home Page (Desktop View)
+
+![Home Page (Desktop View)](https://i.ibb.co/NnYQSzG/home-desktop.png)
+
+Screen 1 (Desktop View)
+
+![Screen 1 (Desktop View)](https://i.ibb.co/tD70yfm/screen1-desktop.png)
+
+Screen 2 (Desktop View)
+
+![Screen 2 (Desktop View)](https://i.ibb.co/zrQQNxR/screen2-desktop.png)
+
+Home Page (Mobile View)
+
+![Home Page (Mobile View)](https://i.ibb.co/wLKYbvG/home-mobile.png)
+
+Screen 1 (Mobile View)
+
+![Screen 1 (Mobile View)](https://i.ibb.co/51npDZN/screen1-mobile.png)
+
+Screen 2 (Mobile View)
+
+![Screen 2 (Mobile View)](https://i.ibb.co/hx5wyVr/screen2-mobile.png)
