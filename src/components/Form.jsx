@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../stylesheets/form.css";
 const Form = () => {
+
+  const apiData = []
   const initialValues = {
     authKey: "",
     title: "",
@@ -38,20 +41,39 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submit is clicked");
-    setFormErrors(validateForm(formValues));
+    // console.log(formValues);
+
+    const errors = validateForm(formValues)
+    setFormErrors(errors);
     setIsSubmit(true);
+    console.log(errors)
+    console.log(Object.keys(errors).length)
+    if(Object.keys(errors).length === 0){
+      // console.log(formValues);
+      apiData.push(formValues)
+      console.log(apiData)
+      postFormDataToAPI(formValues)
+    }
   };
 
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
+  const postFormDataToAPI = async (formValues) => {
+    const response = await axios.post('/sceen1', formValues)
+
+    
+    // if(response.status === 200){
+    //   console.log('form submitted successfully')
+    // }
+  }
+
+  // useEffect(() => {
+  //   // console.log(formErrors);
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //     console.log(formValues);
+  //   }
+  // }, [formErrors]);
 
   const validateForm = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i; //for email validation
 
     if (!values.authKey) {
       errors.authKey = "Invalid Auth Key!";
