@@ -74,11 +74,15 @@
 }
 
 @media screen and (max-width: 756px) {
-  
+  .screen1__container{
+    padding-block: 50px;
+    height: auto;
+  }
   .form__container{
     justify-content: flex-start;
     overflow-y: scroll;
     padding-block: 50px;
+    height: auto;
   }
 
   .blob1{

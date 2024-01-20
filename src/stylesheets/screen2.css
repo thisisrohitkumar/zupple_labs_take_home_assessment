@@ -56,6 +56,7 @@
 .block__details__grid__row:nth-of-type(1) {
   background-color: transparent;
   padding: 15px 15px 15px 0;
+  align-items: center;
 }
 
 .block__details__grid__row:nth-of-type(3) {
@@ -63,10 +64,66 @@
   padding: 15px 0 15px 0;
 }
 
+.block__details__grid__row:nth-of-type(3) .block__details__grid__column2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .block__details__grid__row:nth-of-type(4) {
   background-color: var(--s2-bg-color);
   padding: 0;
 }
+
+.block__details__grid__column1,
+.block__details__grid__column2 {
+  flex: 1;
+}
+
+.block__details__grid__column1 table,
+.block__details__grid__column2 table {
+  width: 100%;
+  border-spacing: 0;
+  font-size: 1rem;
+  table-layout: fixed;
+}
+.block__details__grid__column1 td,
+.block__details__grid__column2 td {
+  padding: 15px 18px;
+  display: table-cell;
+}
+
+.block__details__grid__column1 td p{
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.block__details__grid__column1 tr:nth-of-type(odd),
+.block__details__grid__column2 tr:nth-of-type(odd) {
+  background-color: var(--s2-bg-color);
+}
+
+.block__details__grid__column2 tr td:last-of-type {
+  padding-block: 0;
+}
+
+.closeBtn {
+  float: right;
+  cursor: pointer;
+  width: fit-content;
+}
+
+#block_text {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+#block_no {
+  color: var(--s2-accent-color-2);
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+}
+
+
 
 .transaction__details__grid {
   display: flex;
@@ -96,47 +153,9 @@
   text-align: right;
 }
 
-.closeBtn {
-  float: right;
-  cursor: pointer;
-  width: fit-content;
-}
 
-#block_no {
-  color: var(--s2-accent-color-2);
-  display: inline-block;
-  font-family: "Poppins", sans-serif;
-}
 
-#block_text {
-  font-size: 2.5rem;
-  font-weight: 600;
-}
 
-.block__details__grid__column1,
-.block__details__grid__column2 {
-  flex: 1;
-}
-
-.block__details__grid__column1 table,
-.block__details__grid__column2 table {
-  width: 100%;
-  border-spacing: 0;
-  font-size: 1rem;
-}
-.block__details__grid__column1 td,
-.block__details__grid__column2 td {
-  padding: 15px 18px;
-}
-
-.block__details__grid__column1 tr:nth-of-type(odd),
-.block__details__grid__column2 tr:nth-of-type(odd) {
-  background-color: var(--s2-bg-color);
-}
-
-.block__details__grid__column2 tr td:last-of-type {
-  padding-block: 0;
-}
 
 #btc_price {
   color: green;
@@ -146,12 +165,12 @@
 #spiderpool {
   background-color: #154da5;
   width: fit-content;
-  padding: 5px;
+  padding: 3px 10px;
   border-radius: 5px;
   font-weight: 600;
 }
 
-#hash {
+/* #hash {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -159,7 +178,7 @@
 
 #hash_value {
   color: var(--s2-accent-color-2);
-}
+} */
 
 #color_blue {
   color: var(--s2-accent-color-2);
@@ -170,6 +189,7 @@
   width: 25px;
   height: 25px;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 #trans_quant {
@@ -201,7 +221,6 @@
 }
 
 .total__btc__cell {
-  /* column-span: 4;  */
   float: right;
 }
 
@@ -243,12 +262,13 @@
 .pagination__container {
   background-color: #1c1f2c;
   height: 100%;
+  width: 80%;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .pagination__container .span {
@@ -269,7 +289,26 @@
   color: var(--s2-accent-color-1) !important;
 }
 
+.alpha{
+  display: flex;
+  align-items: flex-start;
+}
+
+.beta{
+  display: inline-block;
+}
+
+.gamma{
+  margin-top: 5px;
+  margin-left: 10px;
+  background-color: #2f3246;
+  padding-inline: 5px;
+  width: fit-content;
+}
+
+
 @media screen and (max-width: 756px) {
+
   .screen2__container {
     padding-top: 0;
     overflow-x: visible;
@@ -277,8 +316,9 @@
   .block__container {
     flex-wrap: nowrap;
     overflow-x: scroll;
-    padding: 60px 10px 10px 30px;
-    scrollbar-width: 0;
+    padding: 60px 0 10px 30px;
+    /* scrollbar-width: 0; */
+    width: 95%;
   }
 
   .cube__container2 {
@@ -292,61 +332,82 @@
 
   .block__details__grid__row {
     flex-direction: column;
-    gap: 20px;
-    padding: 0;
-    font-size: 0.5rem;
-  }
-
-  .closeBtn {
-    font-size: 1.2rem;
+    align-items: center;
+    gap: 5px;
   }
 
   .block__details__grid__row:nth-of-type(1) {
     flex-direction: row;
   }
 
-  .transaction__details__row {
-    flex-direction: column;
-  }
-  .transaction__details__row:nth-of-type(odd) {
-    flex-direction: column;
-    padding: 10px;
-  }
-  .transaction__details__row:nth-of-type(even) {
-    padding: 0px;
-  }
-
-  .transaction__details__row p {
-    width: 90%;
-    word-wrap: break-word;
-  }
-  .transaction__details__row .transction__details__column2 p {
-    width: 50%;
-    word-wrap: break-word;
+  .block__details__grid__row:nth-of-type(3) {
+    gap: 15px;
+    align-items: flex-start;
   }
 
   #block_text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  #spiderpool {
+    background-color: #154da5;
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 5px;
     font-weight: 600;
   }
 
-  .block__details__grid__column1 td,
-  .block__details__grid__column2 td {
-    padding: 5px 8px;
+  .block__details__grid__row:nth-of-type(3) .block__details__grid__column2 {
+    display: flex;
+    justify-content: flex-start;
   }
 
-  .transction__details__column1,
-  .transction__details__column2 {
-    flex: 1;
+  .pagination__container {
+    width: 100%;
+    align-items: center;
+  }
+  
+  .pagination__container .span {
+    padding-inline: 7.8px;
+    padding-block: 10px;
+  }
+
+  .transaction__id {
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .transaction__details__row {
+    background-color: #202537;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .transaction__details__row:nth-of-type(
+    odd
+  ){
+    gap: 10px;
+  }
+
+  .transaction__details__row:nth-of-type(
+    odd
+  ) .transction__details__column2{
+    justify-content: flex-start;
   }
 
   .transction__details__column1 td,
 .transction__details__column2 td {
   padding: 5px 8px;
-  width: 50%;
+  display: table;
 }
 
+.transction__details__column1 table,
+.transction__details__column2 table {
+  table-layout: fixed;
+}
 
 }

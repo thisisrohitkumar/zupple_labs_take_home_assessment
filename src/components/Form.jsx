@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../stylesheets/form.css";
 const Form = () => {
-
-  const apiData = []
+  const apiData = [];
   const initialValues = {
     authKey: "",
     title: "",
@@ -38,32 +37,13 @@ const Form = () => {
     }
   };
 
+  // A function to handle submit event
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit is clicked");
-    // console.log(formValues);
-
-    const errors = validateForm(formValues)
+    const errors = validateForm(formValues);
     setFormErrors(errors);
     setIsSubmit(true);
-    console.log(errors)
-    console.log(Object.keys(errors).length)
-    if(Object.keys(errors).length === 0){
-      // console.log(formValues);
-      apiData.push(formValues)
-      console.log(apiData)
-      postFormDataToAPI(formValues)
-    }
   };
-
-  const postFormDataToAPI = async (formValues) => {
-    const response = await axios.post('/sceen1', formValues)
-
-    
-    // if(response.status === 200){
-    //   console.log('form submitted successfully')
-    // }
-  }
 
   // useEffect(() => {
   //   // console.log(formErrors);
@@ -72,13 +52,14 @@ const Form = () => {
   //   }
   // }, [formErrors]);
 
+  // A function to validate form inputs
   const validateForm = (values) => {
     const errors = {};
 
     if (!values.authKey) {
-      errors.authKey = "Invalid Auth Key!";
+      errors.authKey = "Authentication Key Is Required!";
     } else if (values.authKey.length < 10) {
-      errors.authKey = "Auth Key Must Be 10 Char Long!";
+      errors.authKey = "Key Must Be 10 Char Long!";
     }
     if (!values.title) {
       errors.title = "Title is Required!";
@@ -87,13 +68,13 @@ const Form = () => {
       errors.desc = "Description is Required!";
     }
     if (!values.tags) {
-      errors.tags = "Tags must be comma seperated!";
+      errors.tags = "Tags are Required!";
     }
     if (!values.date) {
-      errors.date = "Invalid Date Format";
+      errors.date = "Date Is Required!";
     }
     if (!values.software) {
-      errors.software = "Software is Required!";
+      errors.software = "Software Is Required!";
     }
     if (!values.image) {
       errors.image = "Image Is Required!";
@@ -107,11 +88,10 @@ const Form = () => {
 
   return (
     <>
-      <form id="form" className="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form__grid">
-          <div className="form__grid__row1">
-            <div className="form__grid__column1">
-              
+          <div className="form__grid__row">
+            <div className="form__grid__column">
               {/* Authentication Key */}
               <div className="form__field">
                 <label htmlFor="authKey">Authentication Key</label>
@@ -122,11 +102,8 @@ const Form = () => {
                   placeholder="Authentication Key"
                   value={formValues.authKey}
                   onChange={handleChange}
-                  aria-describedby="authError"
                 />
-                <small id="authError" className="error-message">
-                  {formErrors.authKey}
-                </small>
+                <small className="error">{formErrors.authKey}</small>
               </div>
 
               {/* Title */}
@@ -139,11 +116,8 @@ const Form = () => {
                   placeholder="Title"
                   value={formValues.title}
                   onChange={handleChange}
-                  aria-describedby="titleError"
                 />
-                <small id="titleError" className="error-message">
-                  {formErrors.title}
-                </small>
+                <small className="error">{formErrors.title}</small>
               </div>
 
               {/* Description */}
@@ -156,15 +130,12 @@ const Form = () => {
                   placeholder="Description"
                   value={formValues.desc}
                   onChange={handleChange}
-                  aria-describedby="descError"
                 ></textarea>
-                <small id="descError" className="error-message">
-                  {formErrors.desc}
-                </small>
+                <small className="error">{formErrors.desc}</small>
               </div>
             </div>
-            <div className="form__grid__column2">
 
+            <div className="form__grid__column">
               {/* Tags */}
               <div className="form__field">
                 <label htmlFor="tags">Tags (comma separated)</label>
@@ -175,28 +146,22 @@ const Form = () => {
                   placeholder="Tags (comma separated)"
                   value={formValues.tags}
                   onChange={handleChange}
-                  aria-describedby="tagsError"
                 />
-                <small id="tagsError" className="error-message">
-                  {formErrors.tags}
-                </small>
+                <small className="error">{formErrors.tags}</small>
               </div>
 
               {/* Date */}
               <div className="form__field">
                 <label htmlFor="date">Date</label>
                 <input
-                  type="date"
+                  type="text"
                   name="date"
                   id="date"
                   placeholder="DD/MM/YY"
                   value={formValues.date}
                   onChange={handleChange}
-                  aria-describedby="dateError"
                 />
-                <small id="dateError" className="error-message">
-                  {formErrors.date}
-                </small>
+                <small className="error">{formErrors.date}</small>
               </div>
 
               {/* Software */}
@@ -207,63 +172,50 @@ const Form = () => {
                   id="software"
                   onChange={handleChange}
                   value={formValues.software}
-                  aria-describedby="softwareError"
                 >
                   <option value="sketch">Sketch</option>
                   <option value="figma">Figma</option>
                   <option value="illustrator">Illustrator</option>
                 </select>
-                <small id="softwareError" className="error-message">
-                  {formErrors.software}
-                </small>
+                <small className="error">{formErrors.software}</small>
               </div>
 
               {/* Image and File */}
-              <div className="form__field custom-file">
+              <div className="form__field custom__file__field">
                 <span>
                   <label htmlFor="image">Thumbnail Image</label>
-                  <label className="custom-file-upload">
+                  <label className="custom__file__upload">
                     Upload File
                     <input
                       type="file"
                       name="image"
                       id="image"
                       onChange={handleChange}
-                      aria-describedby="fileError"
                     />
                   </label>
-                  <p id="fileName" className="error-message">
-                    {formValues.imageName}
-                  </p>
-                  <p id="fileError" className="error-message">
-                    {formErrors.image}
-                  </p>
+                  <p id="fileName">{formValues.imageName}</p>
+                  <p id="fileError">{formErrors.image}</p>
                 </span>
 
                 <span>
                   <label htmlFor="file">Source File</label>
-                  <label className="custom-file-upload">
+                  <label className="custom__file__upload">
                     Upload File
                     <input
                       type="file"
                       name="file"
                       id="file"
                       onChange={handleChange}
-                      aria-describedby="fileError"
                     />
                   </label>
-                  <p id="fileName" className="error-message">
-                    {formValues.fileName}
-                  </p>
-                  <p id="fileError" className="error-message">
-                    {formErrors.file}
-                  </p>
+                  <p id="fileName">{formValues.fileName}</p>
+                  <p id="fileError">{formErrors.file}</p>
                 </span>
               </div>
             </div>
           </div>
-          <div className="form__grid__row2">
 
+          <div className="form__grid__row">
             {/* Submit Button */}
             <div className="form__submit">
               <button type="submit">Submit</button>
