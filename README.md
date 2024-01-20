@@ -1,12 +1,18 @@
 
 # Front-end Engineering Intern Take-Home Assessment | Zupple Labs
 
-Submitted By : Rohit Kumar
+**Submitted By :** <br/> 
+Rohit Kumar <br/>
+MCA II Year <br/>
+(224CA049)
 
 
 ## Tech Stack
 
-**Client:** HTML, CSS, JavaScript, React
+- HTML <br/>
+- CSS <br/>
+- JavaScript <br/>
+- ReactJS
 
 
 ## Run Locally
