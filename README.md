@@ -41,6 +41,13 @@ Start the server
   npm run start
 ```
 
+**Visit :**
+- Home Page Route (http://localhost:5173/)
+
+- Screen 1 Route (http://localhost:5173/screen1)
+
+- Screen 2 Route (http://localhost:5173/screen2)
+
 
 ## Screenshots
 Home Page (Desktop View)
