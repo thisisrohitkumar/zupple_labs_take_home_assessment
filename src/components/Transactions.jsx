@@ -19,7 +19,7 @@ const Transactions = () => {
             <table>
               <tr className="alpha">
                 <td>
-                  <i class="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__right"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__right"></i>
                   <p className="beta">Coinbase (Newly Generated Coins)</p>
                   <p className="gamma">s456342^&**&$#%@$524tset2%@$%</p>
                 </td>
@@ -34,7 +34,7 @@ const Transactions = () => {
                 </td>
                 <td style={{ float: "right" }}>
                   <p style={{ display: "inline-block" }}>6.67966301 BTC</p>
-                  <i class="fa-solid fa-right-long fa-xl arrow__green arrow__margin__left"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__green arrow__margin__left"></i>
                 </td>
               </tr>
               <tr>
@@ -56,7 +56,7 @@ const Transactions = () => {
                 </td>
                 <td style={{ float: "right" }}>
                   <p style={{ display: "inline-block" }}>0.00000000 BTC</p>
-                  <i class="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__left"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__left"></i>
                 </td>
               </tr>
               <tr>
@@ -78,7 +78,7 @@ const Transactions = () => {
                 </td>
                 <td style={{ float: "right" }}>
                   <p style={{ display: "inline-block" }}>0.00000000 BTC</p>
-                  <i class="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__left"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__left"></i>
                 </td>
               </tr>
               <tr>
@@ -100,7 +100,7 @@ const Transactions = () => {
                 </td>
                 <td style={{ float: "right" }}>
                   <p style={{ display: "inline-block" }}>0.00000000 BTC</p>
-                  <i class="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__left"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__left"></i>
                 </td>
               </tr>
               <tr>
@@ -127,7 +127,7 @@ const Transactions = () => {
             <table>
               <tr style={{ display: "flex", alignItems: "flex-start" }}>
                 <td>
-                  <i class="fa-solid fa-right-long fa-xl arrow__red arrow__margin__right"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__red arrow__margin__right"></i>
                   <p id="color_blue">bc1qp0972pr...xp34ddfgdfg</p>
                 </td>
                 <td>0.00078228 BTC</td>
@@ -148,7 +148,7 @@ const Transactions = () => {
                 </td>
                 <td style={{ float: "right" }}>
                   <p style={{ display: "inline-block" }}>0.00009996 BTC</p>
-                  <i class="fa-solid fa-right-long fa-xl arrow__green arrow__margin__left"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__green arrow__margin__left"></i>
                 </td>
               </tr>
               <tr>
@@ -174,8 +174,8 @@ const Transactions = () => {
           <div className="transction__details__column1">
             <table>
               <tr style={{ display: "flex", alignItems: "flex-start" }}>
-                <td s>
-                  <i class="fa-solid fa-right-long fa-xl arrow__red arrow__margin__right"></i>
+                <td>
+                  <i className="fa-solid fa-right-long fa-xl arrow__red arrow__margin__right"></i>
                   <p id="color_blue">bc10sdfs972pr...xp8psffgdfg</p>
                   <p id="multisig">multisig 2 of 3</p>
                 </td>
@@ -197,7 +197,7 @@ const Transactions = () => {
                 </td>
                 <td style={{ float: "right" }}>
                   <p style={{ display: "inline-block" }}>0.01080726 BTC</p>
-                  <i class="fa-solid fa-right-long fa-xl arrow__green arrow__margin__left"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__green arrow__margin__left"></i>
                 </td>
               </tr>
               <tr>
@@ -206,7 +206,7 @@ const Transactions = () => {
                 </td>
                 <td style={{ float: "right" }}>
                   <p style={{ display: "inline-block" }}>0.01184606 BTC</p>
-                  <i class="fa-solid fa-right-long fa-xl arrow__red arrow__margin__left"></i>
+                  <i className="fa-solid fa-right-long fa-xl arrow__red arrow__margin__left"></i>
                 </td>
               </tr>
               <tr>

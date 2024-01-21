@@ -6,11 +6,11 @@ const Pagination = () => {
     <>
       <div className="pagination__container">
         <div className="span">
-          <i class="fa-solid fa-angles-left"></i>
-          <i class="fa-solid fa-angles-left"></i>
+          <i className="fa-solid fa-angles-left"></i>
+          <i className="fa-solid fa-angles-left"></i>
         </div>
         <div className="span">
-          <i class="fa-solid fa-angles-left"></i>
+          <i className="fa-solid fa-angles-left"></i>
         </div>
         <div className="span active">1</div>
         <div className="span">2</div>
@@ -20,11 +20,11 @@ const Pagination = () => {
         <div className="span">...</div>
         <div className="span">208</div>
         <div className="span">
-          <i class="fa-solid fa-angles-right"></i>
+          <i className="fa-solid fa-angles-right"></i>
         </div>
         <div className="span">
-          <i class="fa-solid fa-angles-right"></i>
-          <i class="fa-solid fa-angles-right"></i>
+          <i className="fa-solid fa-angles-right"></i>
+          <i className="fa-solid fa-angles-right"></i>
         </div>
       </div>
     </>
