@@ -16,9 +16,9 @@
 ## <a id="desc"></a> Description
 
 This assessment includes 3 screens:
-1. **Home Page** - Contains basic overview and links to other 2 screens *(relative path : '/')*
-2. **Screen 1** - Form Submission and Validation *(relative path : '/screen1')*
-3. **Screen 2** - Blockchain Explorer *(relative path : '/screen2')*
+1. **Home Page** - Contains basic overview and links to other 2 screens *`(relative path : '/')`*
+2. **Screen 1** - Form Submission and Validation *`(relative path : '/screen1')`*
+3. **Screen 2** - Blockchain Explorer *`(relative path : '/screen2')`*
 
 
 ## <a id="tech"></a> Tech Stack
@@ -65,35 +65,35 @@ Start the server
 
 ## <a id="live"></a> Live Demo Link
 
-http://mickeysawsbucket.s3-website.ap-south-1.amazonaws.com/ - *(Deployed on AWS S3 Bucket)*
+http://mickeysawsbucket.s3-website.ap-south-1.amazonaws.com/ - *`(Deployed on AWS S3 Bucket)`*
 
 #### Alternate Link
 
-https://zupple-labs-take-home-assessment.vercel.app/ - *(Deployed on Vercel)*
+https://zupple-labs-take-home-assessment.vercel.app/ - *`(Deployed on Vercel)`*
 
 ## <a id ="ss"></a> Screenshots
 
-Home Page (Desktop View)
+Home Page `(Desktop View)`
 
 ![Home Page (Desktop View)](https://i.ibb.co/NnYQSzG/home-desktop.png)
 
-<a id="screen1"></a> Screen 1 (Desktop View)
+<a id="screen1"></a> Screen 1 `(Desktop View)`
 
 ![Screen 1 (Desktop View)](https://i.ibb.co/tD70yfm/screen1-desktop.png)
 
-<a id="screen2"></a> Screen 2 (Desktop View)
+<a id="screen2"></a> Screen 2 `(Desktop View)`
 
 ![Screen 2 (Desktop View)](https://i.ibb.co/zrQQNxR/screen2-desktop.png)
 
-Home Page (Mobile View)
+Home Page `(Mobile View)`
 
 ![Home Page (Mobile View)](https://i.ibb.co/wLKYbvG/home-mobile.png)
 
-Screen 1 (Mobile View)
+Screen 1 `(Mobile View)`
 
 ![Screen 1 (Mobile View)](https://i.ibb.co/51npDZN/screen1-mobile.png)
 
-Screen 2 (Mobile View)
+Screen 2 `(Mobile View)`
 
 ![Screen 2 (Mobile View)](https://i.ibb.co/hx5wyVr/screen2-mobile.png)
 
