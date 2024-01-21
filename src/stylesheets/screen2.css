@@ -92,7 +92,7 @@
   display: table-cell;
 }
 
-.block__details__grid__column1 td p{
+.block__details__grid__column1 td p {
   word-wrap: break-word;
   width: 100%;
 }
@@ -123,45 +123,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-
-
-.transaction__details__grid {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-}
-
-.transaction__details__row {
-  background-color: #202537;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 15px;
-  width: 100%;
-  font-size: 1rem;
-}
-.transction__details__column {
-  flex: 1;
-}
-
-.transaction__id {
-  color: var(--s2-accent-color-2);
-}
-
-.transaction__timestamp {
-  text-align: right;
-}
-
-
-
-
-
-#btc_price {
-  color: green;
-  display: inline-block;
-}
-
 #spiderpool {
   background-color: #154da5;
   width: fit-content;
@@ -169,16 +130,6 @@
   border-radius: 5px;
   font-weight: 600;
 }
-
-/* #hash {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-#hash_value {
-  color: var(--s2-accent-color-2);
-} */
 
 #color_blue {
   color: var(--s2-accent-color-2);
@@ -192,123 +143,7 @@
   vertical-align: middle;
 }
 
-#trans_quant {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.transction__details__column1,
-.transction__details__column2 {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-}
-
-.transaction__details__row:nth-of-type(odd) .transction__details__column2 {
-  justify-content: flex-end;
-}
-
-.transction__details__column1 table,
-.transction__details__column2 table {
-  width: 100%;
-  border-spacing: 0;
-  font-size: 1rem;
-}
-
-.transction__details__column1 td,
-.transction__details__column2 td {
-  padding: 15px 18px;
-}
-
-.total__btc__cell {
-  float: right;
-}
-
-.total__btc {
-  text-align: right;
-  background-color: #154da5;
-  width: fit-content;
-  padding: 8px;
-}
-
-.arrow__red {
-  color: red;
-}
-.arrow__green {
-  color: green;
-}
-.arrow__grey {
-  color: grey;
-}
-
-.arrow__margin__left {
-  margin-left: 10px;
-}
-.arrow__margin__right {
-  margin-right: 10px;
-}
-
-#multisig {
-  background-color: #f5d525;
-  color: #000;
-  width: fit-content;
-  padding: 0 12px;
-  border-radius: 50px;
-  margin-left: 30px;
-  margin-top: 5px;
-  font-size: 0.8rem;
-}
-
-.pagination__container {
-  background-color: #1c1f2c;
-  height: 100%;
-  width: 80%;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.pagination__container .span {
-  flex: 1;
-  height: 100%;
-  cursor: pointer;
-  padding-inline: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: var(--s2-accent-color-2);
-  font-size: 1rem;
-}
-
-.active {
-  background-color: #5d359a;
-  color: var(--s2-accent-color-1) !important;
-}
-
-.alpha{
-  display: flex;
-  align-items: flex-start;
-}
-
-.beta{
-  display: inline-block;
-}
-
-.gamma{
-  margin-top: 5px;
-  margin-left: 10px;
-  background-color: #2f3246;
-  padding-inline: 5px;
-  width: fit-content;
-}
-
-
 @media screen and (max-width: 756px) {
-
   .screen2__container {
     padding-top: 0;
     overflow-x: visible;
@@ -317,7 +152,6 @@
     flex-wrap: nowrap;
     overflow-x: scroll;
     padding: 60px 0 10px 30px;
-    /* scrollbar-width: 0; */
     width: 95%;
   }
 
@@ -361,53 +195,4 @@
     display: flex;
     justify-content: flex-start;
   }
-
-  .pagination__container {
-    width: 100%;
-    align-items: center;
-  }
-  
-  .pagination__container .span {
-    padding-inline: 7.8px;
-    padding-block: 10px;
-  }
-
-  .transaction__id {
-    width: 100%;
-    word-wrap: break-word;
-  }
-
-  .transaction__details__row {
-    background-color: #202537;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 15px;
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .transaction__details__row:nth-of-type(
-    odd
-  ){
-    gap: 10px;
-  }
-
-  .transaction__details__row:nth-of-type(
-    odd
-  ) .transction__details__column2{
-    justify-content: flex-start;
-  }
-
-  .transction__details__column1 td,
-.transction__details__column2 td {
-  padding: 5px 8px;
-  display: table;
-}
-
-.transction__details__column1 table,
-.transction__details__column2 table {
-  table-layout: fixed;
-}
-
 }
