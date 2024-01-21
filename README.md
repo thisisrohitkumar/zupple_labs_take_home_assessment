@@ -7,6 +7,7 @@
 * [Tech Stack](#tech)
 * [Installation](#install)
 * [Live Link](#live)
+* [Demo Video](#demo)
 * [Screenshots](#ss)
    * [Screen 1](#screen1)
    * [Screen 2](#screen2)
@@ -70,6 +71,10 @@ http://mickeysawsbucket.s3-website.ap-south-1.amazonaws.com/ - *`(Deployed on AW
 #### Alternate Link
 
 https://zupple-labs-take-home-assessment.vercel.app/ - *`(Deployed on Vercel)`*
+
+## <a id ="demo"></a> Demo Video
+
+https://github.com/thisisrohitkumar/zupple_labs_take_home_assessment/assets/107547744/808da9a7-b0f2-4dcb-90af-ce70c28ff45b
 
 ## <a id ="ss"></a> Screenshots
 
