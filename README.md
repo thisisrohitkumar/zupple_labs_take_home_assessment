@@ -5,7 +5,7 @@
 
 * [Description](#desc)
 * [Tech Stack](#tech)
-* [Installation](#install)
+* [Run Locally](#install)
 * [Live Link](#live)
 * [Demo Video](#demo)
 * [Screenshots](#ss)
