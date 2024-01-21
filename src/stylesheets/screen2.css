@@ -17,6 +17,8 @@
 .block__container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 70px;
 }
 
 .cube__container1,
@@ -67,6 +69,7 @@
 .block__details__grid__row:nth-of-type(3) .block__details__grid__column2 {
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 
 .block__details__grid__row:nth-of-type(4) {
@@ -77,6 +80,7 @@
 .block__details__grid__column1,
 .block__details__grid__column2 {
   flex: 1;
+  
 }
 
 .block__details__grid__column1 table,

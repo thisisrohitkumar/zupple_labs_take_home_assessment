@@ -11,7 +11,7 @@
     align-items: flex-end;
   }
   
-  .pagination__container .span {
+  .pagination__container .page {
     flex: 1;
     height: 100%;
     cursor: pointer;
@@ -35,8 +35,9 @@
         align-items: center;
       }
       
-      .pagination__container .span {
+      .pagination__container .page {
         padding-inline: 7.8px;
         padding-block: 10px;
+        font-size: .8rem;
       }    
 }

@@ -17,6 +17,7 @@ const Transactions = () => {
         <div className="transaction__details__row">
           <div className="transction__details__column1">
             <table>
+              <tbody>
               <tr className="alpha">
                 <td>
                   <i className="fa-solid fa-right-long fa-xl arrow__grey arrow__margin__right"></i>
@@ -24,10 +25,12 @@ const Transactions = () => {
                   <p className="gamma">s456342^&**&$#%@$524tset2%@$%</p>
                 </td>
               </tr>
+              </tbody>
             </table>
           </div>
           <div className="transction__details__column2">
             <table>
+              <tbody>
               <tr>
                 <td>
                   <p id="color_blue">bc1qpsd72pr...xp8p4ddfgdfg</p>
@@ -40,8 +43,8 @@ const Transactions = () => {
               <tr>
                 <td>
                   <p style={{ display: "inline-block" }}>
-                    OP_RETURN{" "}
-                    <p
+                    OP_RETURN
+                    <plaintext
                       style={{
                         display: "inline-block",
                         fontSize: ".8rem",
@@ -51,7 +54,7 @@ const Transactions = () => {
                       }}
                     >
                       42^&**&$#%ss@$
-                    </p>
+                    </plaintext>
                   </p>
                 </td>
                 <td style={{ float: "right" }}>
@@ -62,8 +65,8 @@ const Transactions = () => {
               <tr>
                 <td>
                   <p style={{ display: "inline-block" }}>
-                    OP_RETURN{" "}
-                    <p
+                    OP_RETURN
+                    <plaintext
                       style={{
                         display: "inline-block",
                         fontSize: ".8rem",
@@ -73,7 +76,7 @@ const Transactions = () => {
                       }}
                     >
                       42^&**&$#%sdsfs@$524ts
-                    </p>
+                    </plaintext>
                   </p>
                 </td>
                 <td style={{ float: "right" }}>
@@ -84,8 +87,8 @@ const Transactions = () => {
               <tr>
                 <td>
                   <p style={{ display: "inline-block" }}>
-                    OP_RETURN{" "}
-                    <p
+                    OP_RETURN
+                    <plaintext
                       style={{
                         display: "inline-block",
                         fontSize: ".8rem",
@@ -95,7 +98,7 @@ const Transactions = () => {
                       }}
                     >
                       42^&**&$#%sdsfs@$524t
-                    </p>
+                    </plaintext>
                   </p>
                 </td>
                 <td style={{ float: "right" }}>
@@ -109,6 +112,7 @@ const Transactions = () => {
                   <p className="total__btc">6.67966301 BTC</p>
                 </td>
               </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -125,6 +129,7 @@ const Transactions = () => {
         <div className="transaction__details__row">
           <div className="transction__details__column1">
             <table>
+              <tbody>
               <tr style={{ display: "flex", alignItems: "flex-start" }}>
                 <td>
                   <i className="fa-solid fa-right-long fa-xl arrow__red arrow__margin__right"></i>
@@ -138,10 +143,12 @@ const Transactions = () => {
                   <plaintext id="btc_price">$21.77</plaintext>)
                 </td>
               </tr>
+              </tbody>
             </table>
           </div>
           <div className="transction__details__column2">
             <table>
+              <tbody>
               <tr>
                 <td>
                   <p id="color_blue">bc1qpsdfsff0972pr...xp8pyvcv34ddfgdfg</p>
@@ -157,6 +164,7 @@ const Transactions = () => {
                   <p className="total__btc">0.00009996 BTC</p>
                 </td>
               </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -173,6 +181,7 @@ const Transactions = () => {
         <div className="transaction__details__row">
           <div className="transction__details__column1">
             <table>
+              <tbody>
               <tr style={{ display: "flex", alignItems: "flex-start" }}>
                 <td>
                   <i className="fa-solid fa-right-long fa-xl arrow__red arrow__margin__right"></i>
@@ -187,10 +196,12 @@ const Transactions = () => {
                   <plaintext id="btc_price">$28.72</plaintext>)
                 </td>
               </tr>
+              </tbody>
             </table>
           </div>
           <div className="transction__details__column2">
             <table>
+              <tbody>
               <tr>
                 <td>
                   <p id="color_blue">bc1qpsdfsff0972pr...xp8pyvcv34ddfgdfg</p>
@@ -215,6 +226,7 @@ const Transactions = () => {
                   <p className="total__btc">0.02265332 BTC</p>
                 </td>
               </tr>
+              </tbody>
             </table>
           </div>
         </div>

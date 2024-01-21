@@ -5,6 +5,7 @@ const BlockDetails = () => {
     <>
       <div className="block__details__grid__column1">
         <table>
+          <tbody>
           <tr>
             <td>Hash</td>
             <td id="color_blue">
@@ -26,10 +27,12 @@ const BlockDetails = () => {
             <td>Weight</td>
             <td>3.99 MWU</td>
           </tr>
+          </tbody>
         </table>
       </div>
       <div className="block__details__grid__column2">
         <table>
+          <tbody>
           <tr>
             <td>Total fees</td>
             <td>
@@ -48,6 +51,7 @@ const BlockDetails = () => {
               <p id="spiderpool">SpiderPool</p>
             </td>
           </tr>
+          </tbody>
         </table>
       </div>
     </>
