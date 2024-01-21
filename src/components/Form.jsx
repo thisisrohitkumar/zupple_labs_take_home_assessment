@@ -270,7 +270,7 @@ const Form = () => {
                   type="text"
                   name="date"
                   id="date"
-                  placeholder="DD/MM/YY"
+                  placeholder="DD/MM/YYYY"
                   value={formValues.date}
                   onChange={handleChange}
                 />
