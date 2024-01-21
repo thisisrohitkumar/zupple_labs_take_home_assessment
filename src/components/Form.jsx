@@ -1,94 +1,207 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../stylesheets/form.css";
 const Form = () => {
-  const apiData = [];
-  const initialValues = {
+  const [submitBtnText, setSubmitBtnText] = useState("Submit");
+
+  const [successMsg, setSuccessMsg] = useState("");
+
+  const [formValues, setFormValues] = useState({
     authKey: "",
     title: "",
     desc: "",
     tags: "",
     date: "",
-    software: "Sketch",
+    software: "sketch",
     image: null,
     file: null,
     imageName: "No file uploaded",
     fileName: "No file uploaded",
-  };
+  });
 
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [formErrors, setFormErrors] = useState({
+    authKey: "",
+    title: "",
+    desc: "",
+    tags: "",
+    date: "",
+    software: "",
+    image: "",
+    file: "",
+  });
 
   const handleChange = (e) => {
-    const { name, type, value } = e.target;
+    const { name, value, type, files } = e.target;
+
     if (type === "file") {
-      const file = e.target.files[0];
-      setFormValues((prevValues) => ({
-        ...prevValues,
-        [name]: file,
-        [`${name}Name`]: file.name,
-      }));
+      setFormValues({
+        ...formValues,
+        [name]: files[0],
+        [`${name}Name`]: files[0].name,
+      });
     } else {
-      setFormValues((prevValues) => ({
-        ...prevValues,
+      setFormValues({
+        ...formValues,
         [name]: value,
-      }));
+      });
     }
+
+    // Clearing the corresponding error when the user makes a change
+    setFormErrors({
+      ...formErrors,
+      [name]: "",
+    });
   };
 
-  // A function to handle submit event
+  // A function to check date format entered by the user
+  const isValidDateFormat = (dateString) => {
+    const dateRegex = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}$/;
+
+    return dateRegex.test(dateString);
+  };
+
+  // A function to check tags format entered by the user
+  const isCommaSeparated = (tags) => {
+    const commaSeparatedRegex = /^(\s*[^,\s]+\s*,\s*)*[^,\s]+\s*$/;
+
+    return commaSeparatedRegex.test(tags);
+  };
+
+  //A function to validate form
+  const validateForm = () => {
+    let errors = {};
+    let isValid = true;
+
+    if (!formValues.authKey) {
+      errors.authKey = "Authentication Key is required!";
+      isValid = false;
+    } else if (formValues.authKey.length < 10) {
+      errors.authKey = "Min. 10 chars allowed!";
+      isValid = false;
+    }
+
+    if (!formValues.title) {
+      errors.title = "Title is required!";
+      isValid = false;
+    }
+
+    if (!formValues.desc) {
+      errors.desc = "Description is required!";
+      isValid = false;
+    }
+
+    if (formValues.desc.length > 250) {
+      errors.desc = "Too long (Max. 250 chars allowed)!";
+      isValid = false;
+    }
+
+    if (!formValues.tags) {
+      errors.tags = "Tags are required!";
+      isValid = false;
+    } else if (!isCommaSeparated(formValues.tags)) {
+      errors.tags = "Tags must be comma separated!";
+      isValid = false;
+    }
+
+    if (!formValues.date) {
+      errors.date = "Date is required!";
+      isValid = false;
+    } else if (!isValidDateFormat(formValues.date)) {
+      console.log(formValues.date);
+      errors.date = "Invalid date format!";
+      isValid = false;
+    }
+
+    if (!formValues.software) {
+      errors.software = "Select a software!";
+      isValid = false;
+    }
+
+    if (!formValues.image) {
+      errors.image = "Image is required!";
+      isValid = false;
+    }
+
+    if (!formValues.file) {
+      errors.file = "File is required!";
+      isValid = false;
+    }
+
+    setFormErrors(errors);
+    return isValid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const errors = validateForm(formValues);
-    setFormErrors(errors);
-    setIsSubmit(true);
+
+    setTimeout(async () => {
+      if (validateForm()) {
+        try {
+          const apiUrl =
+            "https://65ad0918adbd5aa31bdff671.mockapi.io/api/v1/data"; //mockAPI URL
+
+          // Data to be sent
+          const formData = new FormData();
+          formData.append("authKey", formValues.authKey);
+          formData.append("title", formValues.title);
+          formData.append("desc", formValues.desc);
+          formData.append("tags", formValues.tags);
+          formData.append("date", formValues.date);
+          formData.append("software", formValues.software);
+          formData.append("image", formValues.image);
+          formData.append("file", formValues.file);
+
+          // Generating POST request using Axios
+          const response = await axios.post(apiUrl, JSON.stringify(formData));
+
+          if (response.status === 201) {
+            setSubmitBtnText("Submit");
+            setSuccessMsg("Form Submitted Successfully!");
+
+            // Resetting form values
+            setFormValues({
+              authKey: "",
+              title: "",
+              desc: "",
+              tags: "",
+              date: "",
+              software: "sketch",
+              image: null,
+              file: null,
+              imageName: "No file uploaded",
+              fileName: "No file uploaded",
+            });
+          }
+        } catch (error) {
+          console.error("Error submitting form:", error);
+          setSubmitBtnText("Submit");
+        }
+      } else {
+        setSubmitBtnText("Submit");
+      }
+    }, 1000);
+
+    setSubmitBtnText("Submitting...");
   };
 
-  // useEffect(() => {
-  //   // console.log(formErrors);
-  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
-  //     console.log(formValues);
-  //   }
-  // }, [formErrors]);
-
-  // A function to validate form inputs
-  const validateForm = (values) => {
-    const errors = {};
-
-    if (!values.authKey) {
-      errors.authKey = "Authentication Key Is Required!";
-    } else if (values.authKey.length < 10) {
-      errors.authKey = "Key Must Be 10 Char Long!";
-    }
-    if (!values.title) {
-      errors.title = "Title is Required!";
-    }
-    if (!values.desc) {
-      errors.desc = "Description is Required!";
-    }
-    if (!values.tags) {
-      errors.tags = "Tags are Required!";
-    }
-    if (!values.date) {
-      errors.date = "Date Is Required!";
-    }
-    if (!values.software) {
-      errors.software = "Software Is Required!";
-    }
-    if (!values.image) {
-      errors.image = "Image Is Required!";
-    }
-    if (!values.file) {
-      errors.file = "File Is Required!";
-    }
-
-    return errors;
+  const closeSuccessMsg = () => {
+    setSuccessMsg("");
   };
 
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
+        {/* success msg container */}
+        <div
+          className={
+            successMsg != "" ? "success__msg__show" : "success__msg__hide"
+          }
+        >
+          <p>{successMsg}</p>
+          <button type="button" id="closeBtn" onClick={closeSuccessMsg}>
+            &#10005;
+          </button>
+        </div>
         <div className="form__grid">
           <div className="form__grid__row">
             <div className="form__grid__column">
@@ -126,7 +239,7 @@ const Form = () => {
                 <textarea
                   name="desc"
                   id="desc"
-                  rows="8"
+                  rows="9"
                   placeholder="Description"
                   value={formValues.desc}
                   onChange={handleChange}
@@ -218,7 +331,7 @@ const Form = () => {
           <div className="form__grid__row">
             {/* Submit Button */}
             <div className="form__submit">
-              <button type="submit">Submit</button>
+              <button type="submit">{submitBtnText}</button>
             </div>
           </div>
         </div>
