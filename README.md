@@ -1,13 +1,27 @@
 
 # Front-end Engineering Intern Take-Home Assessment | Zupple Labs
 
-**Submitted By :** <br/> 
-Rohit Kumar <br/>
-MCA II Year <br/>
-(224CA049)
+## Table of Contents
+
+* [Description](#desc)
+* [Tech Stack](#tech)
+* [Installation](#install)
+* [Live Link](#live)
+* [Screenshots](#ss)
+   * [Screen 1](#screen1)
+   * [Screen 2](#screen2)
+* [Author](#author)
 
 
-## Tech Stack
+## <a id="desc"></a> Description
+
+This assessment includes 3 screens:
+1. **Home Page** - Contains basic overview and links to other 2 screens *(relative path : '/')*
+2. **Screen 1** - Form Submission and Validation *(relative path : '/screen1')*
+3. **Screen 2** - Blockchain Explorer *(relative path : '/screen2')*
+
+
+## <a id="tech"></a> Tech Stack
 
 - HTML <br/>
 - CSS <br/>
@@ -15,7 +29,7 @@ MCA II Year <br/>
 - ReactJS
 
 
-## Run Locally
+## <a id="install"></a> Run Locally
 
 Clone the project
 
@@ -42,23 +56,32 @@ Start the server
 ```
 
 **Visit :**
-- Home Page Route (http://localhost:5173/)
+- Home Page Route => http://localhost:5173/
 
-- Screen 1 Route (http://localhost:5173/screen1)
+- Screen 1 Route => http://localhost:5173/screen1
 
-- Screen 2 Route (http://localhost:5173/screen2)
+- Screen 2 Route => http://localhost:5173/screen2
 
 
-## Screenshots
+## <a id="live"></a> Live Demo Link
+
+http://mickeysawsbucket.s3-website.ap-south-1.amazonaws.com/ - *(Deployed on AWS S3 Bucket)*
+
+#### Alternate Link
+
+https://zupple-labs-take-home-assessment.vercel.app/ - *(Deployed on Vercel)*
+
+## <a id ="ss"></a> Screenshots
+
 Home Page (Desktop View)
 
 ![Home Page (Desktop View)](https://i.ibb.co/NnYQSzG/home-desktop.png)
 
-Screen 1 (Desktop View)
+<a id="screen1"></a> Screen 1 (Desktop View)
 
 ![Screen 1 (Desktop View)](https://i.ibb.co/tD70yfm/screen1-desktop.png)
 
-Screen 2 (Desktop View)
+<a id="screen2"></a> Screen 2 (Desktop View)
 
 ![Screen 2 (Desktop View)](https://i.ibb.co/zrQQNxR/screen2-desktop.png)
 
@@ -73,3 +96,13 @@ Screen 1 (Mobile View)
 Screen 2 (Mobile View)
 
 ![Screen 2 (Mobile View)](https://i.ibb.co/hx5wyVr/screen2-mobile.png)
+
+
+### <a id="author"></a>Developed By
+
+Rohit Kumar <br/>
+MCA II Year <br/>
+(224CA049) <br/>
+
+Check out my portfolio : <br/>
+https://thisisrohitkumar.github.io/portfolio/
